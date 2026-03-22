@@ -14,6 +14,8 @@ function addTask() {
 
   tasks.push(task);
 
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+
   displayTasks();
 
   input.value = "";
@@ -52,3 +54,13 @@ function completeTask(index) {
   tasks[index].completed = !tasks[index].completed;
   displayTasks();
 }
+
+function loadTasks() {
+  let storedTasks = localStorage.getItem("tasks");
+  if (storedTasks) {
+    tasks = JSON.parse(storedTasks);
+    displayTasks();
+  }
+}
+
+window.onload = loadTasks;
