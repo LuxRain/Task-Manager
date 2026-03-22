@@ -1,0 +1,9 @@
+body {
+  text-align: center;
+  margin-top: 350px;
+}
+
+li {
+  margin: 10px 0;
+  list-style: none;
+}
